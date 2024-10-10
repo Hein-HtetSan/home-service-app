@@ -24,6 +24,7 @@ export default function Header() {
                         <Text style={{
                             color: Colors.WHITE,
                             fontSize: 20,
+                            fontFamily: 'outfit-medium',
                         }}
                         >{user?.fullName}</Text>
                     </View>
