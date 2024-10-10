@@ -1,10 +1,11 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
+import Header from './Header'
 
 export default function HomeScreen() {
     return (
         <View>
-            <Text>HomeScreen</Text>
+            <Header />
         </View>
     )
 }
