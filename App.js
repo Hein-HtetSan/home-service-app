@@ -1,7 +1,8 @@
-import { ClerkProvider, SignedIn, SignedOut } from '@clerk/clerk-expo';
+import { ClerkProvider } from '@clerk/clerk-expo';
+import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Login from './App/Screens/LoginScreen/Login';
+import { StyleSheet, View } from 'react-native';
+import TabNavigation from './App/Navigations/TabNavigation';
 
 export default function App() {
   return (
@@ -10,14 +11,16 @@ export default function App() {
       <View style={styles.container}>
 
         {/* sing in component  */}
-        <SignedIn>
-          <Text>You are Signed in</Text>
-        </SignedIn>
+        {/* <SignedIn> */}
+        <NavigationContainer>
+          <TabNavigation />
+        </NavigationContainer>
+        {/* </SignedIn> */}
 
         {/* sign out component  */}
-        <SignedOut>
+        {/* <SignedOut>
           <Login />
-        </SignedOut>
+        </SignedOut> */}
 
         <StatusBar style="auto" />
 
