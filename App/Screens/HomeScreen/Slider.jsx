@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Image, StyleSheet, View } from 'react-native';
+import Heading from '../../Components/Heading';
 import GlobalApi from '../../Utils/GlobalApi';
 
 export default function Slider() {
@@ -9,7 +10,7 @@ export default function Slider() {
         getSliders();
     }, []);
 
-    
+
 
     const getSliders = async () => {
         try {
@@ -23,13 +24,13 @@ export default function Slider() {
 
     return (
         <View>
-            <Text style={styles.heading}>Offer For You</Text>
+            <Heading text={"Offers for you"} />
             <FlatList
                 data={slider}
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
                 renderItem={({ item, index }) => (
-                    <View style={{ marginRight20, }}>
+                    <View style={{ marginRight: 20, }}>
                         <Image source={{ uri: item?.image?.url }}
                             style={styles.sliderImage} />
                     </View>
@@ -41,11 +42,6 @@ export default function Slider() {
 }
 
 const styles = StyleSheet.create({
-    heading: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        margin: 10,
-    },
     sliderImage: {
         width: 270,
         height: 150,
