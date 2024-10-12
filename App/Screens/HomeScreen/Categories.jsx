@@ -31,13 +31,17 @@ export default function Categories() {
             <FlatList
                 data={category}
                 numColumns={4}
-                renderItem={({ item, index }) => (
+                renderItem={({ item, index }) => index <= 3 && (
                     <View style={styles.container}>
                         <View style={styles.iconContainer}>
                             <Image source={{ uri: item?.icon?.url }}
                                 style={styles.iconImage} />
                         </View>
-                        <Text style={{ fontFamily: 'outfit-medium', }}>{item.name}</Text>
+                        <Text
+                            style={{ fontFamily: 'outfit-medium', marginTop: 5, }}
+                        >
+                            {item?.name}
+                        </Text>
                     </View>
                 )}
                 keyExtractor={(item) => item.id}
